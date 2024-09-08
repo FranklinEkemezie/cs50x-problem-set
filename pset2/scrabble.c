@@ -5,7 +5,8 @@
 #include "../cs50/cs50.h"
 
 int score_word(string word);
-void announce_winner(string player1_word, string player2_word);
+void announce_winner(int player1_score, int player2_score);
+string strtoupper(string str);
 
 const int POINTS[] = {
     1, 3, 3, 2, 1, 4, 2, 4, 1, 8,
@@ -15,45 +16,48 @@ const int POINTS[] = {
 
 int main(void)
 {
-    string player1 = get_string("Player 1: ");
-    string player2 = get_string("Player 2: ");
+    // Prompt the user for two words
+    string player1_word = get_string("Player 1: ");
+    string player2_word = get_string("Player 2: ");
 
-    announce_winner(player1, player2);
+    // Computer the score of each user
+    int player1_score = score_word(player1_word);
+    int player2_score = score_word(player2_word);
+
+    // Print the winnner
+    announce_winner(player1_score, player2_score);
 }
 
 int score_word(string word)
 {
     int score = 0, letter_index;
-    // word = toupper(word);
+    word = strtoupper(word);
 
     for (int i = 0, len = strlen(word); i < len; i++)
     {
-        letter_index = (int) word[i] - 65;      // index of the letter from ASCII 'A'
+        letter_index = (int) word[i] - (int) 'A';      // index of the letter from ASCII 'A'
         if (letter_index >= 0 && letter_index < 26)
-        {
             score += POINTS[letter_index];
-        }
     }
 
     return score;
 }
 
-void announce_winner(string player1_word, string player2_word)
+void announce_winner(int player1_score, int player2_score)
 {
-    int player1_score = score_word(player1_word);
-    int player2_score = score_word(player2_word);
-
     if (player1_score > player2_score)
-    {
         printf("Player 1 wins!");
-    }
     else if (player1_score < player2_score)
-    {
-        printf("Player 2 wins!");
-    }
+        printf("Player 2 wins");
     else
-    {
         printf("Tie!");
-    }
     printf("\n");
+}
+
+string strtoupper(string str)
+{
+    for (int i = 0, len = strlen(str); i < len; i++)
+        str[i] = toupper(str[i]);
+
+    return str;
 }

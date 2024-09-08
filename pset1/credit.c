@@ -7,7 +7,7 @@ long long get_card_number();
 string get_card_type(long long card_no);
 int sum_of_digits(int number);
 int calculate_card_luhn_checksum(long long card_no);
-bool is_card_valid(long long card_no);
+bool is_card_checksum_valid(long long card_no);
 bool is_card_amex(long long card_no);
 bool is_card_mastercard(long long card_no);
 bool is_card_visa(long long card_no);
@@ -53,7 +53,7 @@ int main(void)
     {
         printf("Card Num %i   :   %lld\n", i + 1000, cards[i]);
         printf("Card Checksum   :   %i\n", calculate_card_luhn_checksum(cards[i]));
-        printf("Card is valid   :   %s\n", is_card_valid(cards[i]) ? "true" : "false");
+        printf("Checksum valid  :   %s\n", is_card_checksum_valid(cards[i]) ? "true" : "false");
         printf("No. of digits   :   %i\n", no_of_digits_long_long(cards[i]));
         printf("First 3 digits  :   %i\n", get_first_n_digits_long_long(3, cards[i]));
         printf("Card type is    :   %s\n", get_card_type(cards[i]));
@@ -79,7 +79,7 @@ long long get_card_number()
 string get_card_type(long long card_no)
 {
     // Validate card
-    if (is_card_valid(card_no))
+    if (is_card_checksum_valid(card_no))
     {
         if (is_card_amex(card_no)) return "AMEX";
         if (is_card_mastercard(card_no)) return "MASTERCARD";
@@ -90,7 +90,7 @@ string get_card_type(long long card_no)
 
 // Check if a card is valid
 // using Luhn's algorithm
-bool is_card_valid(long long card_no)
+bool is_card_checksum_valid(long long card_no)
 {
     return calculate_card_luhn_checksum(card_no) % 10 == 0;
 }
