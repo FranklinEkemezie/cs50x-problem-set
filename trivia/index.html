@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+
+                <h3>What is a group of unicorn 🦄 called?</h3>
+                <span id="check-answer-display"></span>
+                <div>
+                    <button class="option" value="A">A setting of unicorn</button>
+                    <button class="option" value="B">A blessing of unicorn</button>
+                    <button class="option" value="C">A sight of unicorn</button>
+                    <button class="option" value="D">A gist of unicorn</button>
+                </div>
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+
+                <h3>Which problem set was the hardest yet fun to tackle?</h3>
+                <span id="free-response-check-display"></span>
+
+                <input type="text" id="free-response-input" style="display: block; width: 100%; margin-bottom: .4rem;" />
+
+                <button id="confirm-answer-btn">Confirm Answer</button>
+            </div>
+        </div>
+    </body>
+
+    <script>
+        // TODO: Add code to check answers to questions
+
+        const ANSWER = 'B';
+
+        const checkAnswerDisplay = document.getElementById("check-answer-display");
+
+        // Change colours when user clicks on the 'option' buttons
+        const optionBtns = [...document.querySelectorAll('.option')];
+        
+        optionBtns.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                if (e.target.value === ANSWER) {
+                    e.target.style.backgroundColor = 'green';
+                    checkAnswerDisplay.innerHTML = 'Correct';
+                } else {
+                    e.target.style.backgroundColor = 'red';
+                    checkAnswerDisplay.innerHTML = 'Incorrect!';
+                }
+
+            })
+        });
+
+
+        // Confirm the user's free response answer
+        const freeResponseInput = document.getElementById("free-response-input");
+        const confirmAnswerBtn = document.getElementById("confirm-answer-btn");
+        const freeResponseCheckDisplay = document.getElementById("free-response-check-display");
+
+        confirmAnswerBtn.addEventListener('click', function(e) {
+            if (! freeResponseInput.value.trim()) {
+                freeResponseInput.style.backgroundColor = 'red';
+                freeResponseCheckDisplay.innerHTML = 'Incorrect';
+            } else {
+                freeResponseInput.style.backgroundColor = 'green';
+                freeResponseCheckDisplay.innerHTML = 'Correct!'
+            }
+        });
+    </script>
+</html>

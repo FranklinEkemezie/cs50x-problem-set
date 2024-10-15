@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "*.embeddedhtml": "html",
-        "cs50.h": "c"
+        "cs50.h": "c",
+        "helpers.h": "c",
+        "dictionary.h": "c"
     }
 }

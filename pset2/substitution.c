@@ -6,9 +6,11 @@
 #include "../cs50/cs50.h"
 
 string encrypt_substitution(string plaintext, string key);
+bool is_chars_in_key_unique(string key);
 
 int main(int argc, string argv[])
 {
+
     // Check for right usage
     if (argc != 2)
     {
@@ -25,22 +27,20 @@ int main(int argc, string argv[])
         return 1;
     }
 
-    // Check if all the characters are all alphabets and are unique:
-    // If they are all, convert to the same (uppercase),
-    // if not, terminate the program.
+    // Check if the characters are unique
+    if(!is_chars_in_key_unique(key))
+    {
+        printf("Characters of the key must be unique");
+        return 1;
+    }
+
+    // Convert to the same (uppercase),
     char *key_ = malloc(key_len * sizeof(char) + 1);  // copy of the key to keep track
     for (int i = 0; i < key_len; i++)
     {
         if (!isalpha(key[i]))
         {
             printf("All characters in key must be alphabetic.\n");
-            return 1;
-        }
-
-        // Check if they are unique
-        if (strstr(key_, key + i) != NULL)
-        {
-            printf("Characters not unique: %c appears more than once.\n", key[i]);
             return 1;
         }
 
@@ -53,6 +53,25 @@ int main(int argc, string argv[])
 
     // Output the corresponding cipher text 
     printf("ciphertext: %s", encrypt_substitution(plaintext, key));
+}
+
+bool is_chars_in_key_unique(string key)
+{
+    int str_len = strlen(key);
+
+    char key_[str_len];
+
+    for (int i = 0; i < str_len; i++)
+    {
+        if (strchr(key_, key[i]) != NULL)
+        {
+            return false;
+        }
+
+        key_[i] = key[i];
+    }
+
+    return true;
 }
 
 string encrypt_substitution(string plaintext, string key)
