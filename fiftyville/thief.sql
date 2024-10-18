@@ -1,23 +1,15 @@
--- Keep a log of any SQL queries you execute as you solve the mystery.
+-- SQL query to find who the thief is:
+
 
 -- In the beginning, I only know that the theft took place on July 28, 2023
 -- and that the theft took place on Humphrey Street.
 -- First of all, get the description of crimes that took place on that
 -- particular day, and that street:
 
-SELECT id, description FROM crime_scene_reports
-WHERE day = 28 AND month = 7 AND year = 2023
-AND street = 'Humphrey Street';
-
-
 -- The description of crime scene report with ID 295 describes a
 -- similar crime scene. The theft took place at 10:15, interviews were
 -- conducted at the time, and the interview transcripts mentioned
 -- something about 'bakery'
-
-SELECT id, name, transcript FROM interviews
-WHERE day = 28 AND month = 7 AND year = 2023
-AND transcript LIKE '%bakery%';
 
 
 -- In the interview transcripts, three people said something about 'bakery':
@@ -29,7 +21,12 @@ AND transcript LIKE '%bakery%';
 --      the bakery asking the accomplice to purchase a flight ticket to take
 --      the earliest flight out of Fiftyville the next day
 
-SELECT * FROM people
+-- SEE log.sql for more info
+
+
+-- Get the name of the thief
+
+SELECT name FROM people
 
 WHERE
 
@@ -50,7 +47,7 @@ AND id IN (
     -- Get the ID of people who withdrew money from ATM
     -- located in Leggett Street earlier that day
     SELECT bank_accounts.person_id FROM atm_transactions
-    JOIN bank_accounts 
+    JOIN bank_accounts
         ON bank_accounts.account_number = atm_transactions.account_number
     WHERE   atm_transactions.day            = 28    AND
             atm_transactions.month          = 7     AND
