@@ -1,0 +1,53 @@
+---------------------------------
+HTML Tags Used
+---------------------------------
+<a>
+<p>
+<header>
+<main>
+<footer>
+<section>
+<button>
+<div>
+<img>
+<ul>
+<li>
+<nav>
+<hr>
+
+
+------------------------------------------
+CSS Selectors Used
+-----------------------------------------
+I have two CSS files: 'main.css' and 'index.css'
+And I used the following selector:
+    - tag selector => body, html
+    - class selector => .btn, .form-control
+    - id selector => 
+
+
+
+-------------------------------------------
+JavaScript features implemented
+-------------------------------------------
+I used JavaScript to dynamically render the projects
+UI on the projects.html page.
+    - I used the fetch() API function to retrieve the contents
+    of a JSON file asynchronously and render the projects when
+    'fetched' successfully.
+    - I was able to manipulate the DOM, and insert HTML elements
+    dynamically into the DOM using the 'innerHTML' property
+    - I created my custom functions which I invoked when necessary.
+
+
+-------------------------------
+Bootstrap
+------------------------------
+
+I used the Bootstrap components in various ways:
+    - I used the BS Card components to render the projects display UI
+    - I used the BS Navigation Bar components for the navigation bar
+    - I also used the BS Modal to display some HTML over other elements in
+    a nice and responsive manner
+    - I used the Bootstrap along with JavaScript to render Bootstrap components
+    when certain events are triggered.

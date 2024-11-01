@@ -1,0 +1,130 @@
+[
+    {
+        "title": "CS50 Reflect",
+        "description": "Reflect an image by manipulating the individuals pixels of the image",
+        "img": "cs50-reflect.png",
+        "github-link": "",
+        "demo-link": "",
+        "tags": ["c", "memory", "data-structures", "images", "reflect"]
+    },
+    {
+        "title": "Tideman",
+        "description": "Let the ballot reflect the people's choices using the Tideman ballot system",
+        "img": "cs50-reflect.png",
+        "github-link": "",
+        "demo-link": "",
+        "tags": ["c", "memory", "data-structures", "tideman", "ballot", "voting"]
+    },
+    {
+        "title": "Mario",
+        "description": "Simulate the triangles in the Super Mario game",
+        "img": "cs50-reflect.png",
+        "github-link": "",
+        "demo-link": "",
+        "tags": ["c", "python", "mario", "mario-more", "mario-less"]
+    },
+    {
+        "title": "Readability",
+        "description": "Classify texts based on the reader's grade level",
+        "img": "cs50-reflect.png",
+        "github-link": "",
+        "demo-link": "",
+        "tags": ["c", "python", "arrays", "readability"]
+    },
+    {
+        "title": "Fiftyville",
+        "description": "Go in search for the perpetrators of the CS50 duck and the accomplice",
+        "img": "cs50-reflect.png",
+        "github-link": "",
+        "demo-link": "",
+        "tags": ["sql", "sqlite3", "query", "fiftyville"]
+    },
+    {
+        "title": "Speller",
+        "description": "A spell-checker that takes the least amount of time possible",
+        "img": "cs50-reflect.png",
+        "github-link": "",
+        "demo-link": "",
+        "tags": ["c", "data-structures", "algorithm", "array", "hash", "hash-table", "spell-checker"]
+    },
+    {
+        "title": "CS50 Blur",
+        "description": "Go through the individuals pixels leaving the entire image afterwards",
+        "img": "cs50-reflect.png",
+        "github-link": "",
+        "demo-link": "",
+        "tags": ["c", "data-structures", "array", "blur", "box-blur"]
+    },
+    {
+        "title": "CS50 Edges",
+        "description": "Detect the edges of an image",
+        "img": "cs50-reflect.png",
+        "github-link": "",
+        "demo-link": "",
+        "tags": ["c", "data-structures", "array", "edges", "kernel", "edge-detection"]
+    },
+    {
+        "title": "Hello World",
+        "description": "Say hello to the world! From a single-line program to a world-class application",
+        "img": "cs50-reflect.png",
+        "github-link": "",
+        "demo-link": "",
+        "tags": ["c", "python", "html", "beginner"]
+    },
+    {
+        "title": "Birthdays",
+        "description": "A simple web application to track your friends birthdays",
+        "img": "cs50-reflect.png",
+        "github-link": "",
+        "demo-link": "",
+        "tags": ["html", "css", "javascript", "js", "python", "flask", "sql", "sqlite3", "sqlite"]
+    },
+    {
+        "title": "Cash",
+        "description": "Pay customers using the least amount of coins possible, thanks to the greedy algorithm",
+        "img": "cs50-reflect.png",
+        "github-link": "",
+        "demo-link": "",
+        "tags": ["c", "python", "array", "algorithm"]
+    },
+    {
+        "title": "Credit",
+        "description": "Identify and validate credit cards using the Luhn (checksum) algorithm",
+        "img": "cs50-reflect.png",
+        "github-link": "",
+        "demo-link": "",
+        "tags": ["c", "python", "array", "credit-cards", "luhn", "checksum"]
+    },
+    {
+        "title": "DNA",
+        "description": "Identify who a DNA sequence most likely belongs to",
+        "img": "cs50-reflect.png",
+        "github-link": "",
+        "demo-link": "",
+        "tags": ["python", "recursion", "algorithm", "dna"]
+    },
+    {
+        "title": "Caesar",
+        "description": "Encrypt and Decrypt data using the Caesar cipher algorithm",
+        "img": "cs50-reflect.png",
+        "github-link": "",
+        "demo-link": "",
+        "tags": ["c", "caesar", "encryption", "decryption", "caesar-cipher"]
+    },
+    {
+        "title": "Movies",
+        "description": "Get insights from data by running SQL queries on a movie database",
+        "img": "cs50-reflect.png",
+        "github-link": "",
+        "demo-link": "",
+        "tags": ["sql", "query", "queries", "movies", "imdb"]
+    },
+    {
+        "title": "Plurality",
+        "description": "Let the people have a say in electing their leader by casting their votes.",
+        "img": "cs50-reflect.png",
+        "github-link": "",
+        "tags": ["c", "algorithms", "plurality", "election", "voting", "ballot"]
+    }
+
+]

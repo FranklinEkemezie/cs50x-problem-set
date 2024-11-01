@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body,
+html {
+    font-family: "Poppins", sans-serif;
+    font-size: initial;
+    font-weight: normal;
+    background-color: transparent;
+    color: initial;
+}
+
+/* Override bootstrap defaults */
+.btn,
+.form-control {
+    box-shadow: none !important;
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+    font-size: initial;
+    font-weight: normal;
+    text-align: start;
+}
+
+/* CS50 Duck */
+#cs50-duck {
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    margin: 0 auto;
+    filter: none;
+}
+
+a[class*="fa-brands"] {
+    text-decoration: none !important;
+}
+
+.modal-custom-width {
+    max-width: 90%; /* Adjust percentage as needed */
+    width: 90%;
+}
+
+.navbar-toggler {
+    box-shadow: none !important;
+    border: none !important;
+}
+
