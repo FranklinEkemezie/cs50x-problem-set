@@ -1,0 +1,25 @@
+Username                Password
+chris                   chris123
+mary                    m@ry01
+john                    john23
+
+
+transactions
+- transaction_id    INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL
+- user_id           INTEGER FOREIGN KEY (user_id) REFERENCES users(id) NOT NULL
+- type              SET("buy", "sell") NOT NULL
+- symbol            TEXT NOT NULL
+- shares            INTEGER NOT NULL
+- price             NUMERIC NOT NULL
+- date              DATETIME NOT NULL DEFAULT CURRENT TIMESTAMP
+
+CREATE TABLE transactions (
+    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    user_id INTEGER NOT NULL,
+    type TEXT NOT NULL,
+    symbol TEXT NOT NULL,
+    shares INTEGER NOT NULL,
+    price NUMERIC NOT NULL,
+    datetime DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);

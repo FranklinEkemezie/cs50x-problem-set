@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted - {{ quote_data.symbol }}
+{% endblock %}
+
+{% block main %}
+    <h1>Quote | {{ quote_data.symbol }}</h1>
+
+    <ul>
+        <li><b>Name:</b>    {{ quote_data.name }}</li>
+        <li><b>Price:</b>   {{ quote_data.price | usd }}</li>
+    </ul>
+{% endblock %}

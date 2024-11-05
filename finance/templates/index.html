@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+
+    <div class="container">
+
+        <div class="mb-3">
+            <h3 class="text-end">Hi, <span class="text-primary">{{ username }}</span></h3>
+
+            <hr class="w-md-75" />
+
+            <form action="/topup" method="post">
+                <div class="mb-3">
+                    <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="amount" placeholder="Topup Amount" type="text">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Add Cash</>
+            </form>
+
+        </div>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Symbols</th>
+                    <th>Shares</th>
+                    <th>Price</th>
+                    <th>TOTAL</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <!-- Stocks go here -->
+                {% for stock in stocks %}
+                    <tr>
+                        <td>{{ stock.symbol }}</td>
+                        <td>{{ stock.shares }}</td>
+                        <td>{{ stock.price | usd }}</td>
+                        <td>{{ stock.total | usd}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td class="fw-bold">Cash</td>
+                    <td>{{ cash | usd }}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td class="fw-bold">TOTAL</td>
+                    <td>{{ total | usd }}</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+{% endblock %}
